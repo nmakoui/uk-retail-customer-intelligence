@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# NOTE: reports/ (the CSV summary + figures) is intentionally NOT ignored -
+# commit these. They're small, they're the evidence the README's numbers
+# are real, and GitHub renders the PNGs inline in the README preview.
+
+# Raw data: the ASOS file is small (2.7MB) and CC/MIT-friendly to keep in
+# the repo for reproducibility. If you later add Online Retail II or the
+# Trustpilot 123k dataset, reconsider - those are much larger and you may
+# prefer a download script + gitignore instead of committing them.
+data/processed/*
+
+.DS_Store
+

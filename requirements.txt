@@ -1,0 +1,21 @@
+pandas>=2.2
+numpy>=1.26
+scipy>=1.12
+statsmodels>=0.14
+matplotlib>=3.8
+pytest>=8.0
+
+# Added in later phases (Online Retail II / Trustpilot / deployment) -
+# uncomment as you build those modules out:
+# lightgbm
+# scikit-learn
+# lifetimes
+# shap
+# spacy
+# transformers
+# bertopic
+# keybert
+# fastapi
+# uvicorn
+# sqlalchemy
+# psycopg2-binary
