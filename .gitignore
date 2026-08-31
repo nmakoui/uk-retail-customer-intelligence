@@ -9,9 +9,12 @@ __pycache__/
 # are real, and GitHub renders the PNGs inline in the README preview.
 
 # Raw data: the ASOS file is small (2.7MB) and CC/MIT-friendly to keep in
-# the repo for reproducibility. If you later add Online Retail II or the
-# Trustpilot 123k dataset, reconsider - those are much larger and you may
-# prefer a download script + gitignore instead of committing them.
+# the repo for reproducibility. Online Retail II and Trustpilot are much
+# larger (tens/hundreds of MB) - keep these LOCAL ONLY, never commit them.
+# GitHub will reject anything over 100MB anyway, and it's bad practice to
+# store large data files in git even under that limit.
+data/raw/online_retail/*.csv
+data/raw/trustpilot/*.csv
 data/processed/*
 
 .DS_Store

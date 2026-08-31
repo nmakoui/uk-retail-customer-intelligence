@@ -1,7 +1,7 @@
 """
 run_reanalysis.py
 ------------------
-Entry point for Phase 8a + 8b. Run from the repo root:
+Entry point for Phase 6a + 6b. Run from the repo root:
 
     python -m src.experimentation.run_reanalysis
 
@@ -13,7 +13,7 @@ Produces:
     A printed summary (also written to reports/asos_reanalysis_report.md)
     covering: % significant before/after correction, comparison to the
     ~25%-of-tests-significant benchmark widely cited for this dataset, and
-    the Phase 8b power-analysis + simulated-experiment walkthrough.
+    the Phase 6b power-analysis + simulated-experiment walkthrough.
 """
 
 from __future__ import annotations
@@ -94,14 +94,14 @@ def plot_heterogeneity_examples(df_ts: pd.DataFrame, unstable: pd.DataFrame, pat
     plt.close(fig)
 
 
-def run_phase8b_example() -> str:
+def run_phase6b_example() -> str:
     plan = power_analysis.required_sample_size(
         baseline_rate=0.12, mde_absolute=0.012, alpha=0.05, power=0.8
     )
     sim = power_analysis.simulate_experiment(plan)
     r = sim["test_result"]
     return (
-        f"### Phase 8b - designing a new (SIMULATED) retention experiment\n\n"
+        f"### Phase 6b - designing a new (SIMULATED) retention experiment\n\n"
         f"Scenario: a retention email sent to customers flagged high-churn-risk. "
         f"Primary metric: repeat purchase within 30 days.\n\n"
         f"- Assumed baseline repeat-purchase rate: {plan.baseline_rate:.1%}\n"
@@ -122,7 +122,7 @@ def run_phase8b_example() -> str:
 def main():
     os.makedirs(FIGS_DIR, exist_ok=True)
 
-    # --- Phase 8a: re-analysis of the 78 real ASOS experiments ---
+    # --- Phase 6a: re-analysis of the 78 real ASOS experiments ---
     final = run_final_snapshot_analysis()
     final.to_csv(os.path.join(REPORTS_DIR, "asos_reanalysis_summary.csv"), index=False)
 
@@ -157,14 +157,14 @@ def main():
         ts, unstable_on_sig[unstable_on_sig.sign_flip_after_early_period],
         os.path.join(FIGS_DIR, "heterogeneity_examples.png"))
 
-    phase8b_text = run_phase8b_example()
+    phase6b_text = run_phase6b_example()
 
-    report = f"""# Phase 8 - ASOS Experimentation Re-analysis (real data, computed on {pd.Timestamp.today().date()})
+    report = f"""# Phase 6 - ASOS Experimentation Re-analysis (real data, computed on {pd.Timestamp.today().date()})
 
 Dataset: ASOS Digital Experiments Dataset (Liu et al., 2021), 78 real experiments,
 {final.shape[0]} test/metric/variant combinations at their final recorded snapshot.
 
-## 8a. Headline results
+## 6a. Headline results
 
 - Raw significance (p < 0.05), no correction: **{summary_raw_vs_across['n_significant_raw']}
   / {summary_raw_vs_across['n_tests']} ({summary_raw_vs_across['pct_significant_raw']}%)**
@@ -201,7 +201,7 @@ See `figures/heterogeneity_examples.png` for the most heavily-monitored
 significant examples. This remains a simple, explainable heuristic, not a
 formal change-point test.
 
-{phase8b_text}
+{phase6b_text}
 
 ## Files produced
 - `reports/asos_reanalysis_summary.csv` - full per-test results (effect, CI, raw p,

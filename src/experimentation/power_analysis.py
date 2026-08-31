@@ -1,7 +1,7 @@
 """
 power_analysis.py
 ------------------
-Phase 8b of the project blueprint: design a NEW experiment, properly
+Phase 6b of the project plan: design a NEW experiment, properly
 powered, rather than only re-analysing historical ones.
 
 Scenario used here (replace with your actual churn-model output once the

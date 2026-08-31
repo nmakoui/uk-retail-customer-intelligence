@@ -4,7 +4,7 @@ multiple_testing.py
 Every experiment in this dataset tests 4 metrics at once (and 13 of the 78
 tests have more than one treatment arm). Evaluating "is p < 0.05" on each of
 these independently inflates the false-positive rate across the collection -
-exactly the trap Phase 4 of the project blueprint warns about. This module
+exactly the trap Phase 3 of the project plan warns about. This module
 applies Benjamini-Hochberg FDR correction across a chosen grouping and
 reports how many "wins" survive correction.
 """

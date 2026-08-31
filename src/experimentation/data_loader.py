@@ -82,7 +82,7 @@ def drop_zero_count_rows(df: pd.DataFrame) -> pd.DataFrame:
     accrued any samples. These break every variance/rate calculation and
     carry no usable information, so we drop them and log it. This is a real
     data-quality finding, not a hypothetical one - worth stating as such in
-    a Phase 1 data quality write-up."""
+    a Phase 2 data quality write-up."""
     before = len(df)
     mask_bad = (df["count_c"] == 0) | (df["count_t"] == 0)
     dropped = int(mask_bad.sum())

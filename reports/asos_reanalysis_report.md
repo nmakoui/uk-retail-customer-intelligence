@@ -1,9 +1,9 @@
-# Phase 8 - ASOS Experimentation Re-analysis (real data, computed on 2026-08-27)
+# Phase 6 - ASOS Experimentation Re-analysis (real data, computed on 2026-08-30)
 
 Dataset: ASOS Digital Experiments Dataset (Liu et al., 2021), 78 real experiments,
 381 test/metric/variant combinations at their final recorded snapshot.
 
-## 8a. Headline results
+## 6a. Headline results
 
 - Raw significance (p < 0.05), no correction: **105
   / 381 (27.6%)**
@@ -40,7 +40,7 @@ See `figures/heterogeneity_examples.png` for the most heavily-monitored
 significant examples. This remains a simple, explainable heuristic, not a
 formal change-point test.
 
-### Phase 8b - designing a new (SIMULATED) retention experiment
+### Phase 6b - designing a new (SIMULATED) retention experiment
 
 Scenario: a retention email sent to customers flagged high-churn-risk. Primary metric: repeat purchase within 30 days.
 

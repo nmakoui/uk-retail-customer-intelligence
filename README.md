@@ -4,9 +4,10 @@ A portfolio project simulating a UK retail analytics consultancy running
 three parallel client engagements. Full rationale and phase-by-phase plan:
 see `docs/PROJECT_BLUEPRINT.md`.
 
-**Status: Phase 8 (Experimentation) is built and running against real data.
-Phases 1-7 (Online Retail II, Trustpilot NLP) are not started yet — see
-`docs/impact_log.md` for progress.**
+**Status: Phase 2 (all three datasets cleaned - Online Retail II, Trustpilot,
+and ASOS) and Phase 6 (Experimentation re-analysis on the ASOS data) are
+built and running against real data. All other phases are not started yet
+— see `docs/impact_log.md` for progress.**
 
 ## What's actually implemented right now
 
@@ -34,7 +35,7 @@ against `statsmodels` reference implementations. It:
    restricted to tests that were actually significant at the end (checking
    near-null effects for "sign flips" would just be measuring noise).
 6. Designs and powers a **new, hypothetical** retention-email experiment
-   (Phase 8b), then simulates one run of it under the design assumptions —
+   (Phase 6b), then simulates one run of it under the design assumptions —
    clearly labelled as synthetic, never presented as observed.
 
 ### Run it
@@ -63,9 +64,11 @@ Outputs land in `reports/` (`asos_reanalysis_summary.csv`,
   examples show a classic decaying novelty effect.
 
 ## What's next
-- Phase 1-3: Online Retail II ETL + Postgres analytical layer
-- Phase 5-7: Trustpilot NLP + churn/CLV models + SHAP explainability
-- Phase 9-10: Power BI + AWS deployment
+- Statistics module on Online Retail II (Phase 3)
+- Churn/CLV model + SHAP explainability (Phase 4)
+- Trustpilot NLP module (Phase 5)
+- Bringing all findings together into one conclusion (Phase 7)
+- Live demo + AWS deployment (Phase 8)
 
 See `docs/PROJECT_BLUEPRINT.md` for the full plan and `docs/impact_log.md`
 for what's been measured so far.
