@@ -5,18 +5,28 @@ statsmodels>=0.14
 matplotlib>=3.8
 pytest>=8.0
 
-# Added in later phases (Online Retail II / Trustpilot / deployment) -
-# uncomment as you build those modules out:
-# lightgbm
-# scikit-learn
-# lifetimes
-# shap
-# spacy
-# transformers
-# bertopic
-# keybert
-# fastapi
-# uvicorn
+# Phase 4 - churn/CLV modelling + SHAP
+lightgbm
+scikit-learn
+lifetimes
+shap
+
+# Phase 5 - NLP
+transformers
+vaderSentiment
+sentence-transformers
+bertopic
+umap-learn
+tqdm
+# keybert          # not yet used - Phase 5 keyword extraction, still to build
+
+# Phase 3.5 - SQL / AWS
 sqlalchemy
 psycopg2-binary
 python-dotenv
+
+# Not yet built - uncomment when these phases start:
+# fastapi          # Phase 8
+# uvicorn          # Phase 8
+# pymongo          # Phase 5.5
+# mcp>=2.0         # Phase 8 (MCP agent interface)
