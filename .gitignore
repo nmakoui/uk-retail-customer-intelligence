@@ -23,3 +23,6 @@ data/processed/*
 # Model artifacts - large binaries, regenerate by rerunning the training/
 # fitting scripts rather than committing them
 models/
+"*-service.json" 
+"*-task-def.json" 
+"trust-policy.json" 
