@@ -126,9 +126,8 @@ aws ecs update-service --cluster retainscope-cluster --service streamlit-service
 ```
 
 ## What's next
-- Bring all findings together into one conclusion (Phase 7)
 - Optional: LoRA/PEFT fine-tune (Phase 5 extension, lowest priority)
 
-See `docs/project.md` for the full plan, `docs/impact_log.md` for
-everything measured so far, and `AGENTS.md` for environment setup and
-the MCP tool reference.
+See `docs/conclusions.md` for the full synthesis, `docs/project.md` for
+the plan, `docs/impact_log.md` for everything measured, and
+`AGENTS.md` for environment setup and the MCP tool reference.
